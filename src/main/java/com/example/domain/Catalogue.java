@@ -7,14 +7,24 @@ import javax.persistence.*;
 public class Catalogue {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String id;
+    private int id;
 
     private String name;
     private String address;
     private String assortment;
     private String image;
 
-    public String getId() {
+    public Catalogue() {
+    }
+
+    public Catalogue (String name, String address, String assortment, String image) {
+        this.address = address;
+        this.assortment = assortment;
+        this.name = name;
+        this.image = image;
+    }
+
+    public Integer getId() {
         return id;
     }
 

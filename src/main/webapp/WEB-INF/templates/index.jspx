@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page"  version="2.0">
+
+    <jsp:directive.page contentType="text/html" pageEncoding="UTF-8"/>
+    <jsp:output doctype-root-element="html" doctype-system="about:legacy-compat" omit-xml-declaration="true"/>
+
+    <html>
+    <head>
+        <title>GuestBoot Example</title>
+    </head>
+    <body>
+    <h1>Post new review</h1>
+    <form method="POST">
+        <label>
+            <textarea name="name" placeholder="Your review here"><jsp:text/></textarea>
+        </label>
+        <br/>
+        <label>
+            <textarea name="address" placeholder="Your review here"><jsp:text/></textarea>
+        </label>
+        <br/>
+        <label>
+            <textarea name="assortment" placeholder="Your review here"><jsp:text/></textarea>
+        </label>
+        <br/>
+        <label>
+            <textarea name="image" placeholder="Your review here"><jsp:text/></textarea>
+        </label>
+        <br/>
+        <button type="submit">Submit</button>
+    </form>
+    <hr/>
+    </body>
+    </html>
+</jsp:root>

@@ -1,20 +1,44 @@
 package com.example.domain;
 
+import com.example.View;
+import com.fasterxml.jackson.annotation.JsonView;
+
 import javax.persistence.*;
 
 @Entity
 @Table(name = "Users")
 public class User {
-    private String email;
-    private String password;
-    private String name;
-    private String phone;
-    private String clients_id;
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String id;
+    @JsonView(View.Summary.class)
+    private String user_type;
+    @JsonView(View.Summary.class)
+    private String email;
+    @JsonView(View.Summary.class)
+    private String password;
+    private String name;
+    private String phone;
+    @JsonView(View.Summary.class)
+    private String client_id;
+    @JsonView(View.Summary.class)
+    private String caffe_id;
 
+    public String getUser_type() {
+        return user_type;
+    }
+
+    public void setUser_type(String user_type) {
+        this.user_type = user_type;
+    }
+
+    public String getCaffe_id() {
+        return caffe_id;
+    }
+
+    public void setCaffe_id(String caffe_id) {
+        this.caffe_id = caffe_id;
+    }
 
     public String getEmail() {
         return email;
@@ -56,11 +80,11 @@ public class User {
 //        this.id = id;
 //    }
 
-    public String getClients_id() {
-        return clients_id;
+    public String getClient_id() {
+        return client_id;
     }
 
-    public void setClients_id(String clients_id) {
-        this.clients_id = clients_id;
+    public void setClient_id(String client_id) {
+        this.client_id = client_id;
     }
 }
